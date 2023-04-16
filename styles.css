@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+body{
+    display: none;
+}
+
+@media only screen  and (max-width: 600px){
+    *{
+        font-family: 'Poppins', sans-serif;
+        user-select: none;
+    }
+
+    body{
+        display: block;
+        margin: 0;
+        color: white;
+    }
+
+    .container{
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #0e051a;
+    }
+
+    .popup-select{
+        display: none;
+    }
+
+    /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+    .vpa-info-amount-pay{
+        /* display: none; */
+    }
+    .amount-header{
+        width: 100%;
+        height: 55px;
+        background-color: #3f1e65;
+        display: flex;
+        font-size: 1.2em;
+    }
+    .amount-header > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .amount-header .back-button{
+        width: 15%;
+    }
+    .amount-header .title{
+        width: 70%;
+        justify-content: left;
+        padding-left: 10px;
+    }
+    .amount-header .help-button{
+        width: 15%;
+    }
+
+    .amount-block{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: -webkit-fill-available;
+        margin: 8px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #21182b;
+    }
+    .amount-block > div{
+        display: flex;
+        width: -webkit-fill-available;
+    }
+    .vpa-details{
+        margin-bottom: 25px;
+    }
+    .vpa-details > div{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .vpa-details .icon{
+        width: 20%;
+    }
+    .vpa-details .icon .initials{
+        width: 45px;
+        height: 45px;
+        background-color: #27b5f5;
+        color: #ffffff;
+        border-radius: 50%;
+        line-height: 45px;
+        text-align: center;
+        font-size: 1em;
+    }
+    .vpa-details .label{
+        width: 60%;
+        font-size: 0.9em;
+        align-items: stretch;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .vpa-details .label-name{
+        font-size: 1.1em;
+    }
+    .vpa-details .label-id{
+        display: none;
+        font-size: 1em;
+    }
+    .vpa-details .view-history{
+        width: 35%;
+        font-size: 0.75em;
+        font-weight: 300;
+        color: hsl(264, 66%, 70%);
+    }
+
+    .amount-input{
+        font-family: 'Inter', sans-serif;
+        width: 100%;
+        height: 50px;
+        padding: 0 15px;
+        line-height: 50px;
+        background-color: inherit;
+        outline: none;
+        border: 2px solid hsl(269, 74%, 66%); 
+        border-radius: 6px;
+        caret-color:hsl(269, 74%, 66%);
+        font-size: 1.5em;
+        color: #ffffff;
+        margin-bottom: 15px;
+    }
+    .amount-input .amount-pay{
+        width: -webkit-fill-available;
+        margin: 0 8px;
+        background-color: inherit;
+        outline: none;
+        border: none;
+        caret-color:hsl(269, 74%, 66%);
+        font-size: 1em;
+        color: #ffffff;
+    }
+    
+    .description-box{
+        width: 100%;
+        height: 50px;
+        padding: 0 15px;
+        line-height: 50px;
+        border: 1.5px solid hsl(264, 19%, 30%); 
+        border-radius: 6px;
+        font-size: 0.82em;
+        color: hsl(264, 19%, 30%);
+    }
+
+    .amount-proceed{
+        display: flex;
+        position: fixed;
+        align-items: center;
+        width: 100%;
+        height: 55px;
+        bottom: 0;
+        /* bottom: 215px; */
+        line-height: 55px;
+        font-size: 0.9em;
+        justify-content: center;
+        background-color: #463758;
+        color: #bbacc9;
+    }
+    .amount-proceed-valid{
+        background-color: hsl(268, 77%, 65%);
+        color: #ffffff;
+    }
+    /* .amount-proceed{
+        margin-bottom: 250px;
+    } */
+
+    /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+    .confirm-pay{
+        display: none;
+        /* display: flex; */
+        flex-direction: column;
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        height:260px;
+        z-index: 9;
+        background-color: #21182b;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+    .confirm-pay > div{
+        display: flex;
+        width: -webkit-fill-available;
+    }
+    .confirm-pay .payable{
+        height: 60px;
+        padding: 0 18px;
+        border-bottom: 1px solid #4e415b;
+    }
+    .confirm-pay .payable .label{
+        font-size: 0.85em;
+        width: 60%;
+        line-height: 60px;
+    }
+    .confirm-pay .payable .amount{
+        font-size: 1.8em;
+        width: 30%;
+        line-height: 60px;
+        text-align: right;
+    }
+    .confirm-pay .payable .cross{
+        font-size: 2em;
+        width: 10%;
+        line-height: 60px;
+        text-align: right;
+    }
+    .confirm-pay .account{
+        height: 50px;
+        line-height: 50px;
+        padding: 0 8px;
+        margin: 15px 10px;
+        border-radius: 15px;
+        background-color: #2c2338;
+        align-items: center;
+    }
+    .confirm-pay .account .icon{
+        width: 12%;
+        text-align: left;
+    }
+    .confirm-pay .account .icon > img{
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+    }
+    .confirm-pay .account .bank-type{
+        font-size: 0.9em;
+        width: 48%;
+    }
+    .confirm-pay .account .bank-type > img{
+        height: 15px;
+        margin: 5px;
+        vertical-align: middle;
+    }
+    .confirm-pay .account .amount{
+        font-size: 0.85em;
+        width: 30%;
+        text-align: right;
+    }
+    .confirm-pay .account .tick{
+        font-size: 2em;
+        width: 10%;
+        text-align: right;
+        color: #20a15c;
+    }
+    .confirm-pay .pay{
+        padding-top: 18px;
+        border-top: 1px solid #4e415b;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .confirm-pay .pay .add-ac{
+        font-size: 0.8em;
+        color:hsl(268, 77%, 75%);
+    }
+    .confirm-pay .pay .pay-button{
+        font-size: 0.95em;
+        width: 92.5%;
+        height: 50px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        margin: 15px 0;
+        background-color: #a363eb;
+        color: #ffffff;
+    }
+    .confirm-pay .amount{
+        font-family: 'Inter', sans-serif;
+    }
+
+    .pay-loader{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 92.5%;
+        height: 50px;
+        margin: 15px 0;
+    }
+    .pay-loader .mechanics{
+        width: 20px;
+        height: 20px;
+        border: 4px solid #a363eb;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: rotate-on-load 1s infinite linear;
+    }
+    @keyframes rotate-on-load {
+        to{
+            transform: rotate(360deg);
+        }
+    }
+
+    /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+    .pin-interface{
+        display: none;
+    }
+
+    /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+    .gboard-palette{
+        display: none;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 200px;
+        z-index: 9;
+        background-color: #363b3f;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+        padding-top: 5px;
+    }
+    .gboard-palette .item{
+        font-family: 'Rubik', sans-serif;
+        width: 25%;
+        height:50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 1.5em;
+    }
+    .gboard-palette .menu{
+        line-height: 55px;
+    }
+    .gboard-palette .item .next{
+        background-color: #5f97f6;
+        padding: 3px 10px;
+        border-radius: 10px;
+    }
+}
