@@ -306,9 +306,139 @@ body{
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
     .pin-interface{
-        display: none;
+        position: absolute;
+        background-color: #fafafa;
+        color: #3a3a3a;
+    }
+    .pin-merchant{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 60px;
+    }
+    .pin-merchant > div{
+        box-sizing: border-box;
+        width: 50%;
+        padding: 0 20px 0 15px;
+    }
+    .pin-merchant .bank-name{
+        line-height: 35px;
+        height: 25px;
+        font-size: 0.95em;
+    }
+    .pin-merchant .bank-account{
+        height: 35px;
+        margin-top: -35px;
+        font-size: 1.2em;
+    }
+    .pin-merchant .upi-logo{ 
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+    }
+    .pin-merchant .upi-logo > img{
+        height: 35px;
+        vertical-align: middle;
     }
 
+    .pin-to-sending{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 46px;
+        background-color: #e9eaea;
+        align-items: center;
+        box-shadow: 0 1px 0 #c9caca;
+    }
+
+    .pin-to-sending > div{
+        box-sizing: border-box;
+        background-color: #e9eaea;
+        font-size: 0.95em;
+    }
+    .pin-to-sending > .col-1{
+        padding: 0 15px;
+        width: 60%;
+    }
+    .pin-to-sending > .col-2{
+        width: 40%;
+    }
+
+    .pin-upi-text{
+        width: 100%;
+        text-align: center;
+        font-size: 0.9em;
+        margin-top: 20px;
+    }
+    .pin-input-box{
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        margin-top: 30px;
+    }
+    .pin-input-box-item{
+        width: 35px;
+        border-bottom: 2.5px solid #dddddd;
+        margin: 8px;
+    }
+    .pin-input-box-item:nth-of-type(1){
+        border-bottom: 2.5px solid #454545;
+    }
+
+    .pin-warning{
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 75%;
+        padding: 8px;
+        margin-top: 50px;
+        text-align: center;
+        background-color: rgb(255, 240, 194);
+        color: #515151;
+        font-size: 0.9em;
+        border-radius: 20px;
+        line-height: 1.2em;
+    }
+    .pin-warning .material-icons{
+        margin: 0;
+        font-size: 2.5em;
+        color: rgb(255, 195, 82);
+        text-shadow: 0 0.5px 0 #c0c0c0;
+    }
+    .pin-input-keypad{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 250px;
+        background-color: #e9eaea;
+        flex-wrap: wrap;
+        padding-bottom: 12px;
+        padding-top: 5px;
+    }
+    .pin-input-keypad-item{
+        width: 33%;
+        height: 55px;
+        text-align: center;
+        line-height: 55px;
+        font-size: 1.9em;
+        color: #1b317d;
+    }
+    .pin-input-keypad-item .backspace{
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+    .pin-input-keypad-item .check-circle{
+        color: #e9eaea;
+        background-color: #1b317d;
+        font-size: 1.5em;
+        padding: 8px;
+        border-radius: 50%;
+        transform: translateY(-5px);
+    }
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
     .gboard-palette{
@@ -320,19 +450,19 @@ body{
         z-index: 9;
         background-color: #363b3f;
         flex-wrap: wrap;
-        padding-bottom: 10px;
+        padding-bottom: 8px;
         padding-top: 5px;
     }
     .gboard-palette .item{
         font-family: 'Rubik', sans-serif;
         width: 25%;
-        height:50px;
+        height:45px;
         text-align: center;
-        line-height: 50px;
+        line-height: 45px;
         font-size: 1.5em;
     }
     .gboard-palette .menu{
-        line-height: 55px;
+        line-height: 50px;
     }
     .gboard-palette .item .next{
         background-color: #5f97f6;
