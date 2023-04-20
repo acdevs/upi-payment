@@ -32,7 +32,7 @@ body{
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
     .vpa-info-amount-pay{
-        /* display: none; */
+        display: none;
     }
     .amount-header{
         width: 100%;
@@ -306,6 +306,7 @@ body{
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
     .pin-interface{
+        display: none;
         position: absolute;
         background-color: #fafafa;
         color: #3a3a3a;
@@ -438,6 +439,68 @@ body{
         padding: 8px;
         border-radius: 50%;
         transform: translateY(-5px);
+    }
+
+    /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+    .connecting-securely{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #23172c;
+    }
+    .connecting-securely > div{
+        text-align: center;
+    }
+    .connecting-securely .load{
+        margin: -20px 0 20px 0;
+    }
+    .connecting-securely .label{
+        font-size: 1.2em;
+        color: #ebdcef;
+    }
+    .connecting-securely .load > video{
+        width: 118px;
+    }
+
+    /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+    .finalize{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #1c8147;
+    }
+    .finalize .process > div{
+        text-align: center;
+        /* outline: 1px solid red; */
+    }
+    .finalize .process .load{
+        margin: -50px 0 0 0;
+    }
+    .finalize .process .label{
+        width: 80%;
+        margin: auto;
+        font-weight: bold;
+        font-size: 1.02em;
+        color: #ebdcef;
+    }
+    .finalize .process .load > video{
+        width: 130px;
+    }
+    .finalize .process .items{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .finalize .process .items .button{
+        font-size: 0.92em;
+        border: 1.2px solid #ebdcef;
+        border-radius: 25px;
+        padding: 5px 15px;
+        margin: 18px 3.5px;
     }
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
