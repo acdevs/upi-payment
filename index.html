@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>User-Pay</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <title>User-Pay</title>
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="preload" href="res/vid/20230417_020526059.mp4" as="video">
+    <link rel="preload" href="res/vid/20230417_021029524.mp4" as="video">
+    <link rel="preload" href="res/vid/20230417_021648102.mp4" as="video">
+    <link rel="preload" href="res/mus/success.m4a" as="audio">
 </head>
-<body>
+<body tabindex="-1">
 <div class="container select-payee-backdrop">
     <div class="select-payee">
         <div class="get-payees"></div>
@@ -39,7 +42,7 @@
             <div class="view-history">VIEW HISTORY</div>
         </div>
         <div class="amount-input">
-            &#x20B9<input type="number" class="amount-pay" placeholder="Enter an Amount">
+            &#x20B9<input inputmode="numeric" type="text" class="amount-pay" placeholder="Enter an Amount">
         </div>
         <div class="description-box">Add a message (optional)</div>
     </div>
@@ -110,7 +113,7 @@
 
 <!-- Connecting securely -->
 <div class="container connecting-securely">
-    <div class="load"><video src="res/vid/20230417_020526059.mp4" loop preload="metadata"></div>
+    <div class="load"><video src="res/vid/20230417_020526059.mp4" loop preload="auto"></div>
     <div class="label">Connecting Securely</div>
 </div>
 
@@ -118,7 +121,7 @@
 <div class="container finalize">
     <div class="process">
         <div class="load load-view"><video src="res/vid/20230417_021029524.mp4" preload="metadata"></div>
-        <div class="load"><video src="res\vid\20230417_021648102.mp4" loop preload="metadata"></div>
+        <div class="load"><video src="res\vid\20230417_021648102.mp4" loop preload="auto"></div>
         <div class="label"></div>
         <div class="items">
             <div class="button">VIEW DETAILS</div>
@@ -142,7 +145,7 @@
             </div>
         </div>
     </div>
-<audio src="res/noty/success.m4a" preload="metadata"></audio>    
+    <audio src="res/mus/success.m4a" preload="auto"></audio>    
 </div>
 
 <!-- Numeric-Gboard -->

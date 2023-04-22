@@ -74,7 +74,11 @@ function getAmount(){
     const proceedbtn = document.querySelector(".amount-proceed");
 
     inputAmount.addEventListener("input", (e) => {
-        if(e.target.value == "" || e.target.value < "1") {
+        let amount = e.target.value;
+        console.log(amount);
+        const formatter = new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 2 });
+        e.target.value = formatter.format(Number((amount.split(",").join(""))));
+        if(amount == "" || amount < "1") {
             proceedbtn.classList.remove("amount-proceed-valid");
         }else{
             proceedbtn.classList.add("amount-proceed-valid");
@@ -106,7 +110,7 @@ function confirmAmount(){
                 payLoader.style.display = "none";
                 payContext.style.display = "none";
                 resolve();
-            }, 2000);
+            }, 2500);
         });
     });
 }
@@ -161,7 +165,7 @@ function processTransaction(){
         setTimeout(() => {
             document.querySelector(".connecting-securely").style.display = "none";
             resolve();
-        }, 2750);
+        }, 3250);
     });
 }
 
