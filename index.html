@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- phonepe: #361854 -->
-    <!-- upi-ui: #e9eaea-->
-    <!-- conncecting: #a363eb -->
-    <!-- finalize: #27b563 -->
     <meta name="theme-color" content="#361854">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -49,23 +45,24 @@
     </div>
     <div class="amount-proceed">PROCEED TO PAY</div>
 </div>
-
-<div class="confirm-pay">
-    <div class="payable">
-        <div class="label">Total Payable</div>
-        <div class="amount">&#x20B9 100</div>
-        <div class="cross"><span class="material-symbols-outlined">close</span></div>
-    </div>
-    <div class="account">
-        <div class="icon"><img src="https://www.logotaglines.com/wp-content/uploads/2016/08/wp-1470410546498.jpg"></div>
-        <div class="bank-type">Savings Ac<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/2560px-UPI-Logo-vector.svg.png"></div>
-        <div class="amount">&#x20B9 100</div>
-        <div class="tick"><span class="material-symbols-outlined">check_circle</span></div>
-    </div>
-    <div class="pay">
-        <div class="add-ac">Add UPI Account</div>
-        <button class="pay-button amount">PAY &#x20B9 100</button>
-        <!-- <div class="pay-loader"><div class="mechanics"></div></div> -->
+<div class="container confirm-pay-backdrop">
+    <div class="confirm-pay">
+        <div class="payable">
+            <div class="label">Total Payable</div>
+            <div class="amount"></div>
+            <div class="cross"><span class="material-symbols-outlined">close</span></div>
+        </div>
+        <div class="account">
+            <div class="icon"><img src="https://www.logotaglines.com/wp-content/uploads/2016/08/wp-1470410546498.jpg"></div>
+            <div class="bank-type">Savings Ac<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/2560px-UPI-Logo-vector.svg.png"></div>
+            <div class="amount"></div>
+            <div class="tick"><span class="material-symbols-outlined">check_circle</span></div>
+        </div>
+        <div class="pay">
+            <div class="add-ac">Add UPI Account</div>
+            <button class="pay-button amount">PAY</button>
+            <div class="pay-loader"><div class="mechanics"></div></div>
+        </div>
     </div>
 </div>
 
@@ -78,22 +75,22 @@
     </div>
     <div class="pin-to-sending">
         <div class="col-1">To:</div>
-        <div class="col-2">PARDEEP KUMAR</div>
+        <div class="col-2 pin-payee-name"></div>
         <div class="col-1">Sending:</div>
-        <div class="col-2">&#x20B9 100</div>
+        <div class="col-2 pin-payee-amount"></div>
     </div>
     <div class="pin-upi-text">ENTER 6-DIGIT UPI PIN</div>
     <div class="pin-input-box">
-        <div class="pin-input-box-item"></div>
-        <div class="pin-input-box-item"></div>
-        <div class="pin-input-box-item"></div>
-        <div class="pin-input-box-item"></div>
-        <div class="pin-input-box-item"></div>
-        <div class="pin-input-box-item"></div>
+        <div class="pin-input-bit next-bit"></div>
+        <div class="pin-input-bit"></div>
+        <div class="pin-input-bit"></div>
+        <div class="pin-input-bit"></div>
+        <div class="pin-input-bit"></div>
+        <div class="pin-input-bit"></div>
     </div>
     <div class="pin-warning">
-        <span class="material-icons">error</span> 
-        You are transferring money from your bank account to PARDEEP KUMAR
+        <span class="material-icons">error</span>
+
     </div>
     <div class="pin-input-keypad">
         <div class="pin-input-keypad-item">1</div>
@@ -105,49 +102,50 @@
         <div class="pin-input-keypad-item">7</div>
         <div class="pin-input-keypad-item">8</div>
         <div class="pin-input-keypad-item">9</div>
-        <div class="pin-input-keypad-item"><span class="material-icons backspace">backspace</span></div>
+        <div class="pin-input-keypad-item  backspace-key"><span class="material-icons backspace">backspace</span></div>
         <div class="pin-input-keypad-item">0</div>
-        <div class="pin-input-keypad-item"><span class="material-icons check-circle">check</span></div>
+        <div class="pin-input-keypad-item  check-key"><span class="material-icons check-circle">check</span></div>
     </div>
 </div>
 
 <!-- Connecting securely -->
 <div class="container connecting-securely">
-    <div class="load"><video src="res/vid/20230417_020526059.mp4" autoplay loop preload="metadata"></div>
+    <div class="load"><video src="res/vid/20230417_020526059.mp4" loop preload="metadata"></div>
     <div class="label">Connecting Securely</div>
 </div>
 
 <!-- finalize-payment -->
 <div class="container finalize">
     <div class="process">
-        <!-- <div class="load"><video src="res/vid/20230417_021029524.mp4" autoplay loop preload="metadata"></div> -->
-        <div class="load"><video src="res/vid/20230417_021648102.mp4" autoplay loop preload="metadata"></div>
-        <div class="label">Payment of &#x20B9 100 to PARDEEP KUMAR successful. </div>
+        <div class="load load-view"><video src="res/vid/20230417_021029524.mp4" preload="metadata"></div>
+        <div class="load"><video src="res\vid\20230417_021648102.mp4" loop preload="metadata"></div>
+        <div class="label"></div>
         <div class="items">
             <div class="button">VIEW DETAILS</div>
             <div class="button">CHECk BALANCE</div>
         </div>
     </div>
-
-    <div class="slide-up-menu">
-        <div class="bar">
-            <div class="circle">
+    <div class="slide-up">
+        <div class="slide-up-menu">
+            <div class="ad-banner ad-showcase">
+                <img src="res/img/ad-banner.jpg" preload>
+            </div>
+            <div class="ad-banner do-more-with-phonpe">
+                Do More with Phonepe
+                <img src="res/img/ad-phonepe.jpg" preload>
+            </div>
+            <div class="done-btn">DONE</div>
+        </div>
+        <div class="slide-up-bar">
+            <div class="slide-up-bar circle">
                 <span class="material-icons-round circle-up">keyboard_arrow_up</span>
             </div>
         </div>
-        <div class="ad-banner ad-showcase">
-            <img src="res/img/ad-banner.jpg" preload>
-        </div>
-        <div class="ad-banner do-more-with-phonpe">
-            Do More with Phonepe
-            <img src="res/img/ad-phonepe.jpg" preload>
-        </div>
-        <div class="done-btn">DONE</div>
     </div>
 </div>
 
 <!-- Numeric-Gboard -->
-<div class="gboard-palette">
+<!-- <div class="gboard-palette">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
@@ -164,7 +162,7 @@
     <div class="item">0</div>
     <div class="item">.</div>
     <div class="item menu"><span class="material-icons next">keyboard_return</span></div>
-</div>
+</div> -->
 <script src="script.js"></script>
 </body>
 </html>

@@ -4,9 +4,16 @@ var PAYEE_ID;
 var PAYEE_AMOUNT;
 
 getVPA()
-.then(() => {
-    getAmount();
-});
+.then(() => getAmount())
+.then(() => confirmAmount())
+.then(() => getUPIpin())
+.then(() => processTransaction())
+.then(() => success())
+
+function changeTheme(color){
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    metaThemeColor.setAttribute("content", color);
+}
 
 function getVPA(){
     const payeeContext = document.querySelector(".select-payee-backdrop");
@@ -77,14 +84,106 @@ function getAmount(){
         proceedbtn.addEventListener("click", () => {
             if(!(inputAmount.value == "" || inputAmount.value < "1")) {
                 PAYEE_AMOUNT = inputAmount.value;
-                amountContext.style.display = "none";
                 resolve();
             }
         })
     });
 }
 
-function confirmPay(){
-
+function confirmAmount(){
+    const payContext = document.querySelector(".confirm-pay-backdrop");
+    payContext.style.display = "block";
+    document.querySelector(".payable .amount").innerHTML = `₹${PAYEE_AMOUNT}`;
+    document.querySelector(".account .amount").innerHTML = `₹${PAYEE_AMOUNT}`;
+    document.querySelector(".pay .amount").innerHTML = `PAY ₹${PAYEE_AMOUNT}`;
+    const payButton = document.querySelector(".pay-button");
+    const payLoader = document.querySelector(".pay-loader");
+    return new Promise((resolve) => {
+        payButton.addEventListener("click", () => {
+            payButton.style.display = "none";
+            payLoader.style.display = "flex";
+            setTimeout(() => {
+                payLoader.style.display = "none";
+                payContext.style.display = "none";
+                resolve();
+            }, 2000);
+        });
+    });
 }
 
+function getUPIpin(){
+    changeTheme("#e9eaea");
+    const UPIContext = document.querySelector(".pin-interface");
+    UPIContext.style.display = "block";
+    document.querySelector(".pin-payee-name").innerHTML = PAYEE_NAME;
+    document.querySelector(".pin-payee-amount").innerHTML = `₹${PAYEE_AMOUNT}`;
+    document.querySelector(".pin-warning").append(`You are transferring money from your bank account to ${PAYEE_NAME}`);
+    const PadKeys = document.querySelectorAll(".pin-input-keypad-item");
+    const pinKeys = document.querySelectorAll(".pin-input-bit");
+    const checkBtn = document.querySelector(".pin-input-keypad .check-key");
+    let pin = [];
+    PadKeys.forEach((key) => {
+        key.addEventListener("click", (e) => {
+            if(pin.length < 6) {
+                if(e.target.innerText == "backspace") {
+                    pinKeys[pin.length - 1].classList.toggle("bit-set");
+                    pinKeys[pin.length].classList.toggle("next-bit");
+                    pin.pop();
+                }else if(e.target.innerText != "check"){
+                    pin.push(e.target.innerHTML);
+                    pinKeys[pin.length - 1].classList.toggle("bit-set");
+                    pinKeys[pin.length].classList.toggle("next-bit");
+                }
+            }else{
+                if(e.target.innerText == "backspace") {
+                    pinKeys[pin.length - 1].classList.toggle("bit-set");
+                    pin.pop();
+                }
+            }
+        });
+    });
+    return new Promise((resolve) => {
+        checkBtn.addEventListener("click", () => {
+            if(pin.length == 6) {
+                UPIContext.style.display = "none";
+                resolve();
+            }
+        });
+    });
+}
+
+function processTransaction(){
+    changeTheme("#a363eb");
+    document.querySelector(".connecting-securely").style.display = "flex";
+    const connectLoader = document.querySelector(".connecting-securely .load > video");
+    setTimeout(() => {
+        connectLoader.play();
+    }, 500);
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            document.querySelector(".connecting-securely").style.display = "none";
+            resolve();
+        }, 2500);
+    });
+}
+
+function success(){
+    changeTheme("#27b563");
+    const finalContext = document.querySelector(".finalize");
+    finalContext.style.display = "block";
+    document.querySelector(".finalize .label").innerHTML = `Payment of ₹${PAYEE_AMOUNT} to ${PAYEE_NAME} successful.`;
+    const loadDivs = document.querySelectorAll(".finalize .load");
+    const slideMenu = document.querySelector(".slide-up");
+    const slideBar = document.querySelector(".slide-up-bar");
+    document.querySelector(".finalize .load-view > video").play();
+    setTimeout(() => {
+        loadDivs.forEach((loadDiv) => {
+            loadDiv.classList.toggle("load-view")
+        });
+        document.querySelector(".finalize .load-view > video").play();
+        finalContext.style.setProperty("--slide-up-height", "62%");
+        slideBar.style.marginTop = "-10px";
+        document.querySelector(".slide-up-bar .circle-up").classList.add("circle-animate");
+        document.querySelector(".slide-up-bar").classList.add("bar-animate");
+    }, 2000);
+}
