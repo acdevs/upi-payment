@@ -75,13 +75,15 @@ function getAmount(){
 
     inputAmount.addEventListener("input", (e) => {
         let amount = e.target.value;
-        console.log(amount);
-        const formatter = new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 2 });
-        e.target.value = formatter.format(Number((amount.split(",").join(""))));
         if(amount == "" || amount < "1") {
             proceedbtn.classList.remove("amount-proceed-valid");
         }else{
             proceedbtn.classList.add("amount-proceed-valid");
+        }
+        if(amount[amount.length - 1] != ".") {
+            console.log("helllo");
+            let formatted = Intl.NumberFormat("en-IN", {maximumFractionDigits : 2}).format(Number((amount.split(",").join(""))));
+            e.target.value = formatted;
         }
     });
     return new Promise((resolve) => {
@@ -192,4 +194,14 @@ function success(){
         document.querySelector(".slide-up-bar .circle-up").classList.add("circle-animate");
         document.querySelector(".slide-up-bar").classList.add("bar-animate");
     }, 2000);
+}
+
+const debounce = (fn, delay) => {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    }
 }
