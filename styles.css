@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 
 *{
     font-family: 'Poppins', sans-serif;
     user-select: none !important;
     -webkit-user-select: none;
-    /* outline: 1px solid red; */
+    -webkit-tap-highlight-color: transparent;
 }
 
 body{
@@ -14,13 +13,12 @@ body{
 }
 
 @media only screen  and (max-width: 600px){
-
     body{
         display: block;
         margin: 0;
         color: white;
     }
-    
+
     .container{
         display: block;
         position: absolute;
@@ -190,9 +188,12 @@ body{
     }
     .vpa-details .label-name{
         font-size: 1.1em;
+        text-overflow: ellipsis;
     }
     .vpa-details .label-id{
         font-size: 0.95em;
+        opacity: 0.75;
+        text-overflow: ellipsis;
     }
     .vpa-details .view-history{
         width: 35%;
@@ -202,7 +203,7 @@ body{
     }
 
     .amount-input{
-        font-family: 'Inter', sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         width: 100%;
         height: 50px;
         padding: 0 15px;
@@ -217,6 +218,7 @@ body{
         margin-bottom: 15px;
     }
     .amount-input .amount-pay{
+        font-family:  'Plus Jakarta Sans', sans-serif;
         width: -webkit-fill-available;
         margin: 0 8px;
         background-color: inherit;
@@ -242,7 +244,7 @@ body{
 
     .amount-proceed{
         display: flex;
-        position: absolute;
+        position: fixed;
         align-items: center;
         width: 100%;
         height: 55px;
@@ -367,7 +369,7 @@ body{
         color: #ffffff;
     }
     .confirm-pay .amount{
-        font-family: 'Inter', sans-serif;
+        font-family:  'Plus Jakarta Sans', sans-serif;
     }
 
     .pay-loader{
@@ -451,8 +453,11 @@ body{
     }
     .pin-to-sending > .col-2{
         width: 40%;
+        text-overflow: ellipsis;
     }
-
+    .pin-payee-amount{
+        font-family:  'Plus Jakarta Sans', sans-serif;
+    }
     .pin-upi-text{
         width: 100%;
         text-align: center;
@@ -569,8 +574,11 @@ body{
         overflow: hidden;
         z-index: 10;
     }
-    .finalize div{
-        transition: height 1.2s ease-in;
+    .finalize > div{
+        transition: height 0.75s ease-out;
+    }
+    .finalize audio{
+        visibility: hidden;
     }
     .finalize .process{
         position: relative;
@@ -592,13 +600,18 @@ body{
         text-align: center;
         width: 80%;
         font-weight: bold;
-        font-size: 1.02em;
+        font-size: 1.0em;
         color: #ebdcef;
+    }
+    .finalize .process-label-amount{
+        font-family:  'Plus Jakarta Sans', sans-serif;
+        font-size: 1.1em;
     }
     .finalize .process .load > video{
         width: 130px;
     }
     .finalize .process .items{
+        visibility: hidden;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -646,7 +659,7 @@ body{
         text-align: center;
     }
     .bar-animate{
-        animation: wiggle-bar 1.4s linear 0.1s infinite forwards;
+        animation: wiggle-bar 1s linear 0.1s infinite forwards;
     }
     .slide-up-bar .circle{
         position: absolute;
@@ -666,7 +679,7 @@ body{
         line-height: 70px;
     }
     .circle-animate{
-        animation: wiggle-circle 1.4s linear infinite forwards;
+        animation: wiggle-circle 1s linear infinite forwards;
     }
     @keyframes wiggle-circle {
         0%{
@@ -726,7 +739,7 @@ body{
     }
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-    .gboard-palette{
+    /* .gboard-palette{
         display: none;
         position: fixed;
         bottom: 0;
@@ -737,8 +750,8 @@ body{
         flex-wrap: wrap;
         padding-bottom: 8px;
         padding-top: 5px;
-    }
-    .gboard-palette .item{
+    } 
+     .gboard-palette .item{
         font-family: 'Rubik', sans-serif;
         width: 25%;
         height:45px;
@@ -753,5 +766,5 @@ body{
         background-color: #5f97f6;
         padding: 3px 10px;
         border-radius: 10px;
-    }
+    } */
 }

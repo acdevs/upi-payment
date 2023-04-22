@@ -156,27 +156,29 @@ function processTransaction(){
     changeTheme("#a363eb");
     document.querySelector(".connecting-securely").style.display = "flex";
     const connectLoader = document.querySelector(".connecting-securely .load > video");
-    setTimeout(() => {
-        connectLoader.play();
-    }, 500);
+    connectLoader.play();
     return new Promise((resolve) => {
         setTimeout(() => {
             document.querySelector(".connecting-securely").style.display = "none";
             resolve();
-        }, 2500);
+        }, 2750);
     });
 }
 
 function success(){
     changeTheme("#27b563");
+    const notify = document.querySelector(".finalize > audio");
+    notify.play();
     const finalContext = document.querySelector(".finalize");
     finalContext.style.display = "block";
-    document.querySelector(".finalize .label").innerHTML = `Payment of ₹${PAYEE_AMOUNT} to ${PAYEE_NAME} successful.`;
+    document.querySelector(".finalize .label").innerHTML = `Payment of <span class="process-label-amount">₹${PAYEE_AMOUNT}</span> to ${PAYEE_NAME} successful.`;
     const loadDivs = document.querySelectorAll(".finalize .load");
     const slideMenu = document.querySelector(".slide-up");
     const slideBar = document.querySelector(".slide-up-bar");
+    const btns = document.querySelector(".finalize .items");
     document.querySelector(".finalize .load-view > video").play();
-    setTimeout(() => {
+    setTimeout(async () => {
+        btns.style.visibility = "visible";
         loadDivs.forEach((loadDiv) => {
             loadDiv.classList.toggle("load-view")
         });
