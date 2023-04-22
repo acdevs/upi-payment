@@ -7,15 +7,26 @@
     <!-- phonepe: #361854 -->
     <!-- upi-ui: #e9eaea-->
     <!-- conncecting: #a363eb -->
-    <!-- finalize: #1c8147 -->
-    <meta name="theme-color" content="#1c8147">
+    <!-- finalize: #27b563 -->
+    <meta name="theme-color" content="#361854">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <title>Pay</title>
+    <title>User-Pay</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body onload="document.documentElement.webkitRequestFullScreen()">
+<body>
+<div class="container select-payee-backdrop">
+    <div class="select-payee">
+        <div class="get-payees"></div>
+        <div class="add-payee">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="VPA">
+            <div class="add-btn">ADD</div>
+        </div>
+    </div>
+</div>
 <div class="container vpa-info-amount-pay">
     <div class="amount-header">
         <div class="back-button"><span class="material-symbols-outlined">arrow_back</span></div>
@@ -24,19 +35,19 @@
     </div>
     <div class="amount-block">
         <div class="vpa-details">
-            <div class="icon"><span class="initials">PK<span></div>
+            <div class="icon"><span class="initials"><span></div>
             <div class="label">
-                <div class="label-name">PARDEEP KUMAR</div>
-                <div class="label-id">oksbi</div>
+                <div class="label-name"></div>
+                <div class="label-id"></div>
             </div>
             <div class="view-history">VIEW HISTORY</div>
         </div>
-        <div class="amount-input amount-input-valid">
-            &#x20B9<div class="amount-pay" id="amount-pay">100</div>
+        <div class="amount-input">
+            &#x20B9<input type="number" class="amount-pay" placeholder="Enter an Amount">
         </div>
         <div class="description-box">Add a message (optional)</div>
     </div>
-    <div class="amount-proceed amount-proceed-valid">PROCEED TO PAY</div>
+    <div class="amount-proceed">PROCEED TO PAY</div>
 </div>
 
 <div class="confirm-pay">
@@ -102,20 +113,36 @@
 
 <!-- Connecting securely -->
 <div class="container connecting-securely">
-    <div class="load"><video src="res/vid/20230417_020526059.mp4" preload autoplay loop></div>
+    <div class="load"><video src="res/vid/20230417_020526059.mp4" autoplay loop preload="metadata"></div>
     <div class="label">Connecting Securely</div>
 </div>
 
 <!-- finalize-payment -->
 <div class="container finalize">
     <div class="process">
-        <!-- <div class="load"><video src="res/vid/20230417_021029524.mp4" preload autoplay></div> -->
-        <div class="load"><video src="res/vid/20230417_021648102.mp4" autoplay loop></div>
+        <!-- <div class="load"><video src="res/vid/20230417_021029524.mp4" autoplay loop preload="metadata"></div> -->
+        <div class="load"><video src="res/vid/20230417_021648102.mp4" autoplay loop preload="metadata"></div>
         <div class="label">Payment of &#x20B9 100 to PARDEEP KUMAR successful. </div>
         <div class="items">
             <div class="button">VIEW DETAILS</div>
             <div class="button">CHECk BALANCE</div>
         </div>
+    </div>
+
+    <div class="slide-up-menu">
+        <div class="bar">
+            <div class="circle">
+                <span class="material-icons-round circle-up">keyboard_arrow_up</span>
+            </div>
+        </div>
+        <div class="ad-banner ad-showcase">
+            <img src="res/img/ad-banner.jpg" preload>
+        </div>
+        <div class="ad-banner do-more-with-phonpe">
+            Do More with Phonepe
+            <img src="res/img/ad-phonepe.jpg" preload>
+        </div>
+        <div class="done-btn">DONE</div>
     </div>
 </div>
 
@@ -138,6 +165,6 @@
     <div class="item">.</div>
     <div class="item menu"><span class="material-icons next">keyboard_return</span></div>
 </div>
-
+<script src="script.js"></script>
 </body>
 </html>
