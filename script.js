@@ -81,7 +81,6 @@ function getAmount(){
             proceedbtn.classList.add("amount-proceed-valid");
         }
         if(amount[amount.length - 1] != ".") {
-            console.log("helllo");
             let formatted = Intl.NumberFormat("en-IN", {maximumFractionDigits : 2}).format(Number((amount.split(",").join(""))));
             e.target.value = formatted;
         }
@@ -122,7 +121,8 @@ function getUPIpin(){
     const UPIContext = document.querySelector(".pin-interface");
     UPIContext.style.display = "block";
     document.querySelector(".pin-payee-name").innerHTML = PAYEE_NAME;
-    document.querySelector(".pin-payee-amount").innerHTML = `₹${PAYEE_AMOUNT}`;
+    let fPAYEE_AMOUNT = Intl.NumberFormat("en-IN", {maximumFractionDigits : 2, minimumFractionDigits: 2}).format(Number((PAYEE_AMOUNT.split(",").join(""))).toFixed(2));
+    document.querySelector(".pin-payee-amount").innerHTML = `₹${fPAYEE_AMOUNT}`;
     document.querySelector(".pin-warning").append(`You are transferring money from your bank account to ${PAYEE_NAME}`);
     const PadKeys = document.querySelectorAll(".pin-input-keypad-item");
     const pinKeys = document.querySelectorAll(".pin-input-bit");
