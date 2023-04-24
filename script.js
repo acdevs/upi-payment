@@ -66,10 +66,10 @@ function getVPA(){
 function getAmount(){
     document.querySelector(".vpa-details .label-name").innerHTML = PAYEE_NAME;
     document.querySelector(".vpa-details .label-id").innerHTML = PAYEE_ID;
-    let payeeNameSplit = PAYEE_NAME.split(" ");
-    let last = payeeNameSplit.length - 1, first = 0;
-    console.log(payeeNameSplit.length - 1);
-    document.querySelector(".vpa-details .initials").innerHTML = (payeeNameSplit[first][0].concat(payeeNameSplit[last][0])).toUpperCase();
+    let splitName = PAYEE_NAME.trim().split(" ");
+    let firstName = 0;
+    let lastName = splitName.length - 1;
+    document.querySelector(".vpa-details .initials").innerHTML = (splitName[firstName][0].concat(splitName[lastName][0])).toUpperCase();
     const inputAmount = document.querySelector(".amount-pay");
     const proceedbtn = document.querySelector(".amount-proceed");
 
