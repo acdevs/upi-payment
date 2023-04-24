@@ -188,6 +188,9 @@ body{
         flex-direction: column;
         padding: 0 10px;
     }
+    .vpa-details .no-history{
+        width: calc(70%) !important;
+    }
     .vpa-details .label > div{
         overflow: hidden;
         text-overflow: ellipsis;
@@ -201,10 +204,12 @@ body{
         opacity: 0.75;
     }
     .vpa-details .view-history{
-        width: 35%;
+        width: 30%;
         font-size: 0.75em;
         font-weight: 300;
         color: hsl(264, 66%, 70%);
+        justify-content: right;
+        white-space: nowrap
     }
 
     .amount-input{

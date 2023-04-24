@@ -20,6 +20,8 @@ function getVPA(){
     const getPayees = document.querySelector(".get-payees");
     const addVpaBtn = document.querySelector(".select-payee .add-btn");
     const getVpaInfo = document.querySelectorAll(".select-payee input[type='text']");
+    const showHistory = document.querySelector(".view-history");
+    const expandLabel = document.querySelector(".vpa-details .label");
 
     if(localStorage.getItem("payee.details") == null) {
         localStorage.setItem("payee.details", JSON.stringify([]));
@@ -45,6 +47,8 @@ function getVPA(){
                 payeeList.push([PAYEE_NAME, PAYEE_ID]);
                 localStorage.setItem("payee.details", JSON.stringify(payeeList));
                 payeeContext.style.display = "none";
+                showHistory.style.display = "none";
+                expandLabel.classList.add("no-history");
                 resolve();
             }
         });
