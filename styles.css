@@ -744,6 +744,9 @@ body{
         height: 200px;
         overflow: hidden;
     }
+    .container video, audio, img{
+        pointer-events: none;
+    }
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
     /* .gboard-palette{
