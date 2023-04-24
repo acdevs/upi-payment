@@ -62,14 +62,10 @@ function getVPA(){
 function getAmount(){
     document.querySelector(".vpa-details .label-name").innerHTML = PAYEE_NAME;
     document.querySelector(".vpa-details .label-id").innerHTML = PAYEE_ID;
-    let payeeNameIntitals = "";
     let payeeNameSplit = PAYEE_NAME.split(" ");
-    for(let i = 0; i < payeeNameSplit.length; i++) {
-        if(i > 1) break;
-        payeeNameIntitals += payeeNameSplit[i][0].toUpperCase();
-    }
-    document.querySelector(".vpa-details .initials").innerHTML = payeeNameIntitals;
-    const amountContext = document.querySelector(".vpa-info-amount-pay");
+    let last = payeeNameSplit.length - 1, first = 0;
+    console.log(payeeNameSplit.length - 1);
+    document.querySelector(".vpa-details .initials").innerHTML = (payeeNameSplit[first][0].concat(payeeNameSplit[last][0])).toUpperCase();
     const inputAmount = document.querySelector(".amount-pay");
     const proceedbtn = document.querySelector(".amount-proceed");
 
